@@ -56,6 +56,8 @@ A comprehensive automation suite built using Selenium WebDriver, Java, TestNG, a
 ### Day 2: Static Dropdown
 - Automated dropdown with <select> tag using the Select class  
 
+
+
 ### Day 3: Dynamic Dropdown
 - Handled dependent dropdowns with dynamic options using XPath  
 
