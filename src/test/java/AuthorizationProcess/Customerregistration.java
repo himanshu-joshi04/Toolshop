@@ -20,9 +20,6 @@ public class Customerregistration {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://practicesoftwaretesting.com/auth/register");
 		driver.manage().window().maximize();
-
-		
-
 		// Proceed with registration if age >= 18
 		driver.findElement(By.xpath("//input[@id='first_name']")).sendKeys("Himanshu");
 		driver.findElement(By.xpath("//input[@id='last_name']")).sendKeys("Joshi");
@@ -51,7 +48,7 @@ public class Customerregistration {
 		new Select(country).selectByVisibleText("India");
 
 		driver.findElement(By.xpath("//input[@id='phone']")).sendKeys("9782017696");
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("joshii@mailinator.com");
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("joshiii@mailinator.com");
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Happy4646@");
 		driver.findElement(By.xpath("//button[normalize-space()='Register']")).click();
 		
