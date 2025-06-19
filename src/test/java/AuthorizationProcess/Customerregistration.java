@@ -48,7 +48,7 @@ public class Customerregistration {
 		new Select(country).selectByVisibleText("India");
 
 		driver.findElement(By.xpath("//input[@id='phone']")).sendKeys("9782017696");
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("joshiii@mailinator.com");
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("joshih8@mailinator.com");
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Happy4646@");
 		driver.findElement(By.xpath("//button[normalize-space()='Register']")).click();
 		
