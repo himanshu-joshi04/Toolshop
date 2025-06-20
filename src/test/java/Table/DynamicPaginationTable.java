@@ -36,46 +36,26 @@ public class DynamicPaginationTable {
 		driver.findElement(By.xpath("//button[@class='btn-close']")).click();
 		}
 		
-		
 		driver.findElement(By.xpath("//a[@class='parent collapsed'][normalize-space()='Customers']")).click();  //customers main memu
 		driver.findElement(By.xpath("//ul[@id='collapse-5']//a[contains(text(),'Customers')]")).click(); //customers sub menu
+
+			//showing 1 to 10 `of 100
+	   String text	=driver.findElement(By.xpath("//div[contains(text(),'Pages')]")).getText();
 		
-		//Showing 1 to 10 of 19081 (1909 Pages)
-		String text=driver.findElement(By.xpath("//div[contains(text(),'Pages')]")).getText();
+		int total_pages=Integer.parseInt(text.substring(text.indexOf("(")+1, text.indexOf("Pages")-1));
 		
-		int total_pages=Integer.parseInt(text.substring(text.indexOf("(")+1,text.indexOf("Pages")-1));
+		//Repeating Pages
 		
-		
-		//repeating pages
-		for(int p=1;p<=3;p++)
+		for(int p =1; p<=3;p++ )
 		{
-			
 			if(p>1)
 			{
 				WebElement active_page=driver.findElement(By.xpath("//ul[@class='pagination']//*[text()="+p+"]"));
-				active_page.click();
-				Thread.sleep(3000);
+					active_page.click();
+			Thread.sleep(3000);
+
 			}
-			
-			//reading data from the page
-					
-			int noOfRows=driver.findElements(By.xpath("//table[@class='table table-bordered table-hover']//tbody//tr")).size();
-			
-			for(int r=1;r<=noOfRows;r++)
-			{
-				String customerName=driver.findElement(By.xpath("//table[@class='table table-bordered table-hover']//tbody//tr["+r+"]/td[2]")).getText();
-				String email=driver.findElement(By.xpath("//table[@class='table table-bordered table-hover']//tbody//tr["+r+"]/td[3]")).getText();
-				String status=driver.findElement(By.xpath("//table[@class='table table-bordered table-hover']//tbody//tr["+r+"]/td[5]")).getText();
-				
-				System.out.println(customerName+"\t"+email+"\t"+status);
-				
-			}
-			
 		}
-		
-		
-		
-		
 		
 		
 		

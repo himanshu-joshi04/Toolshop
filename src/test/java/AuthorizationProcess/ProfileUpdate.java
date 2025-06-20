@@ -16,7 +16,7 @@ public class ProfileUpdate {
 		driver.get("https://practicesoftwaretesting.com/auth/login");
 		driver.manage().window().maximize();
 		
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("joshihh8@mailinator.com");
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("himanshuuuu@mailinator.com");
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Happy4646@");
 		driver.findElement(By.xpath("//button[@class='btn btn-outline-secondary']")).click();
         driver.findElement(By.xpath("//input[@value='Login']")).click();
