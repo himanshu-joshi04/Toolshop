@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class Addtocart {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -29,7 +29,11 @@ public class Addtocart {
         driver.findElement(By.xpath("//img[@alt='Combination Pliers']")).click();
 		driver.findElement(By.xpath("//button[@id='btn-increase-quantity']")).click();
 		driver.findElement(By.xpath("//button[@id='btn-add-to-cart']")).click();
-		driver.findElement(By.xpath("//a[@aria-label='cart']//fa-icon[@class='ng-fa-icon px-1']")).click();
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("svg[data-icon='cart-shopping']")).click();
+		
 		WebElement Qut =driver.findElement(By.xpath("//input[@id='quantity-01jy70gnbj91tkx357xhxqvkhw']"));
 		Qut.clear();
 		Qut.sendKeys("6");
